@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { fontBangla } from "@/app/layout";
 
 
 const ProductCard = ({ product }) => {
@@ -19,8 +20,8 @@ const ProductCard = ({ product }) => {
         />
       </figure>
 
-      <div className="card-body p-4">
-        <h2 className="font-semibold text-lg line-clamp-2">{product.bangla}</h2>
+      <div className={`card-body p-4 ${fontBangla.className}`}>
+        <h2 className="font-medium text-lg line-clamp-2">{product.bangla}</h2>
 
         <p className="text-sm text-gray-500">
           ⭐ {product.ratings} | বিক্রি হয়েছে {product.sold}+
@@ -43,8 +44,8 @@ const ProductCard = ({ product }) => {
             href={`/products/${product._id}`}
             className="btn btn-primary btn-sm w-full"
           >
-                      {/* বিস্তারিত দেখুন */}
-                      View Details
+            {/* বিস্তারিত দেখুন */}
+            View Details
           </Link>
         </div>
       </div>
